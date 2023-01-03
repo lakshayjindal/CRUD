@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form{
+            align-content: center;
+        }
+        input{
+            display: block;
+            margin: 2vh;
+            padding: 1vh 2vh;
+            border-radius: 5px;
+        }
+        label{
+            font-weight: 600;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <p id='submitbtn'>submit</p>
+        <div id="submit" class="hide">
+            
+            <form action="submit" method="get"> {% csrf_token %}
+                <label for="name">Student Name :  </label><input type="text" id='name' name="name" placeholder="Enter Your Name">
+                <label for="fname">Father's Name :  </label><input type="text" id='fname' name="fname" placeholder="Father's Name">
+                <select name="Course" id="course" style="display: block; margin: 2vh; padding: 1vh 2vh; font-size: medium;font-weight: 700">
+                    <option value="btech">B.Tech</option>
+                    <option value="bca">BCA</option>
+                    <option value="mca">MCA</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="btech">B.Tech</option>
+                </select>
+                <label for="telephone">Phone Number :  </label><input type="tel" id='telephone' name="telephone" placeholder="Phone Number">
+                <button type="submit" style="display: block;padding: 0.5vh 2vh;">Confirm</button>
+            </form>
+        </div>
+        <p id='updatebtn'>update</p>
+        <div id="update"  class="hide">
+            <form action="update" method="get"> {% csrf_token %}
+                <p>Please write all the details </p>
+                <label for="sno">Serial Number :  </label><input type="number" id='sno' name="sno" placeholder="Please give the serial number provided">
+                <label for="name">Student Name :  </label><input type="text" id='name' name="name" placeholder="Enter Your Name">
+                <label for="fname">Father's Name :  </label><input type="text" id='fname' name="fname" placeholder="Father's Name">
+                <select name="Course" id="course" style="display: block; margin: 2vh; padding: 1vh 2vh; font-size: medium;font-weight: 700">
+                    <option value="btech">B.Tech</option>
+                    <option value="bca">BCA</option>
+                    <option value="mca">MCA</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="btech">B.Tech</option>
+                    <option value="btech">B.Tech</option>
+                </select>
+                <label for="telephone">Phone Number :  </label><input type="tel" id='telephone' name="telephone" placeholder="Phone Number">
+                <button type="submit" style="display: block;padding: 0.5vh 2vh;">Confirm</button>
+            </form>
+        </div>
+        </center>
+        <script>
+            document.getElementById('submitbtn').addEventListener('click', ()=>{
+                document.getElementById('submit').classList.toggle('hide')
+            })
+            document.getElementById('updatebtn').addEventListener('click', ()=>{
+                document.getElementById('update').classList.toggle('hide')
+            })
+        </script>
+</body>
+</html>
